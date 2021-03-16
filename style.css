@@ -3,7 +3,13 @@ body{
     background-repeat: none;
     background-size: cover;
 }
-
+p{
+    color: rgb(247, 244, 241);
+    position: relative;
+    top: 100px;
+    left: 660px;
+    font-size: 20px;
+}
 
 #start{
         position: relative;
@@ -17,14 +23,25 @@ body{
 
 
 #myCanvas{
-    background-image: url(images/1_phyURx2pCUQs7PpsJ4WKFw.jpeg);
-    background-repeat: none;
-    background-size: cover;
+    
+    display: none;
 }
 #imgStart{
     position: relative;
     height: 300px;
     width: 600px;
+    margin-left: 30%;
+    margin-top: 10%;
+    
 }
+#playerImg{
+    width: 10px;
+    height: 10px;
+    display: none;
+}
+
+.hide {
+    display: none;
+  }
 
 
