@@ -1,0 +1,30 @@
+body{
+    background-color: black;
+    background-repeat: none;
+    background-size: cover;
+}
+
+
+#start{
+        position: relative;
+        left: 820px;
+        top: 50px;
+        width: 100px;
+        height: 50px;
+        background-color: aqua;
+        font-size: 23px;
+         }
+
+
+#myCanvas{
+    background-image: url(images/1_phyURx2pCUQs7PpsJ4WKFw.jpeg);
+    background-repeat: none;
+    background-size: cover;
+}
+#imgStart{
+    position: relative;
+    height: 300px;
+    width: 600px;
+}
+
+
