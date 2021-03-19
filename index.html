@@ -6,23 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IronDungeon</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        canvas {
-            border: 1px solid #d3d3d3;
-            background-color: #747070;
-            margin-left: 30%;
-            margin-top: 10%;
-        }
-        </style>
+    
 </head>
 <body>
-    <img id="playerImg" src="images/imgbin-mr-game-and-watch-game-watch-mario-luigi-superstar-saga-nintendo-mr-MpCiT0WvzXVwX1qcRZt3wnZEz_t.jpg" alt="playerImg" width="10" height="10">
-    <img id="imgStart" src="images/1_phyURx2pCUQs7PpsJ4WKFw.jpeg" alt="ejemplo">
-    <canvas id="myCanvas" height="300" width="600" ></canvas>
-    <div>
-        <button id="start">Start</button>
+    <div id="initialScreen" style="display:block">
+        <img id="imgStart" src="images/1_phyURx2pCUQs7PpsJ4WKFw.jpeg" alt="ejemplo">
+        <div>
+            <button id="start">Start</button>
+        </div>
+        <p>Press "a" and "d" to move left and right, "spacebar" to jump.</p>
     </div>
-    <p>Press "a" and "d" to move left and right, "spacebar" to jump.</p>
+
+    <div id="gameScreen"  style="display:none"> 
+        <canvas id="myCanvas" height="300" width="600" ></canvas>
+    </div>
+    
     <script src=""></script>
     <script src="js/player.js"></script>
     <script src="js/Game.js"></script>
