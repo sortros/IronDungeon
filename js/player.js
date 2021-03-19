@@ -1,5 +1,18 @@
-class player{
+class Player {
+    constructor(ctx){
+        this.x = 5;
+        this.y = 263;
+        this.height = 10;
+        this.width = 10;
+        this.context = ctx;
+    }
 
+    _draw() { 
+        this.context.fillStyle = 'red';
+        this.context.fillRect(this.x, this.y, this.width, this.height);
+        this.context.stroke();    
+   }
+    
     move() {
         document.onkeydown = movement;
       }
@@ -20,6 +33,8 @@ class player{
          newXPos = xPos -= 5;
          alert("adios")
         }
+        ctx.fillRect(xPos, yPos, 10, 10)
+        ctx.stroke();
         }  
     )}
 

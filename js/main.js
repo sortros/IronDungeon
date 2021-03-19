@@ -8,8 +8,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
          document.querySelector('#initialScreen').style="display:none";
          document.querySelector('#gameScreen').style="display:block";
-         const ctx = canvas.getContext('2d');
-         Game.start();
+         let canvas = document.querySelector('#myCanvas');
+         let ctx = canvas.getContext('2d');
+         const ironGame = new Game(
+             ctx = ctx,
+             player= new Player(ctx)
+         )
+        ironGame.start();
     })
     
       
