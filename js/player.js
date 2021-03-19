@@ -12,7 +12,13 @@ class Player {
         this.context.fillRect(this.x, this.y, this.width, this.height);
         this.context.stroke();    
    }
-    
+
+   goRight(){
+       this.x += 5;
+   }
+    goLeft(){
+        this.x -= 5;
+    }
     move() {
         document.onkeydown = movement;
       }
