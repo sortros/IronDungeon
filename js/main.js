@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
          const ironGame = new Game(
              ctx = ctx,
              player= new Player(ctx),
-             bullet = new Bullet(ctx),
          );
         ironGame.start();
     })

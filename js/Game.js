@@ -1,20 +1,15 @@
 class Game {
-    constructor(ctx, player, bullet) {
+    constructor(ctx, player) {
         this.ctx = ctx;
         this.player = player;
-        this.bullet = bullet;
+        this.bulletArr = [];
 
         //this.cb = callback;
     }
 
     _generateBullet(){
-        this.bullet;
-
-    }
-
-    _goLeft(){
-        this.bullet.x -=1;
-        console.log(this.bullet.x);
+        let bullet = new Bullet(this.ctx);
+        this.bulletArr.push(bullet);
     }
 
     _movement() {
@@ -38,15 +33,16 @@ class Game {
     _update() {
         this._clean();
         this.player._draw();
-        setInterval(this._goLeft.bind(this), 3000);
-        this.bullet._draw();
+        this.bulletArr.forEach(bullet => bullet._draw());
+        this.bulletArr.forEach(bullet => bullet._goLeft());
+        this.bulletArr.forEach(bullet => bullet._disappear(this.bulletArr));
         window.requestAnimationFrame(this._update.bind(this));
         
     }
     start() { 
         this.player._draw();
         this._movement();
-        this._generateBullet();
+        const bulletSpawn = setInterval(this._generateBullet.bind(this), 1000);
         window.requestAnimationFrame(this._update.bind(this));
     }
 }

@@ -11,6 +11,16 @@ class Bullet{
     _draw() { 
         this.context.fillStyle= 'blue';
         this.context.fillRect(this.x, this.y, this.width, this.height);
-        this.context.stroke();    
+        this.context.stroke(); 
+   }
+
+   _goLeft(){
+    this.x -=1;
+   }
+
+   _disappear(bulletArr){
+       if (this.x === 0){
+           bulletArr.shift();
+       }
    }
 }
