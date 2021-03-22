@@ -1,7 +1,7 @@
 class Player {
     constructor(ctx){
         this.x = 5;
-        this.y = 263;
+        this.y = 262;
         this.height = 10;
         this.width = 10;
         this.context = ctx;
@@ -13,35 +13,29 @@ class Player {
         this.context.stroke();    
    }
 
-   goRight(){
-       this.x += 5;
-   }
-    goLeft(){
-        this.x -= 5;
+    goRight(){
+       this.x += 10;
     }
-    move() {
-        document.onkeydown = movement;
-      }
+    goLeft(){
+        this.x -= 10;
+    }
 
-
-      _movement(e) {
-        document.addEventListener('keydown', (event) => {
-        let xPos = 5;
-        let yPos = 263;
-        if(e.keyCode === 68){ //tecla "d"
-            xPos += 20;
-            //alert("hola")
-            ctx.fillRect(40, 263, 10, 10)
-            ctx.stroke();
-            
+    jump(){
+        let jumpUp = () => {
+            if (this.y > 232) {
+                this.y -= 2;
+            } else {
+                clearInterval(iUp);
+                let jumpDown = () => {
+                    if (this.y < 262) {
+                        this.y += 2; 
+                    } else {
+                        clearInterval(iDown);
+                    }
+                }
+                const iDown = setInterval(jumpDown, 25);
+            }
         }
-        if(e.keyCode === 65){//tecla "a"
-         newXPos = xPos -= 5;
-         alert("adios")
-        }
-        ctx.fillRect(xPos, yPos, 10, 10)
-        ctx.stroke();
-        }  
-    )}
-
+       const iUp = setInterval(jumpUp, 25); 
+    }
 }

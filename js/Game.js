@@ -7,20 +7,18 @@ class Game {
 
     _movement() {
         document.addEventListener('keydown', (e) => {
-                //alert(e.code);
-        if(e.code === "KeyD"){ //tecla "d"
-            this.player.goRight();
-            
-        }
-        if(e.code === "KeyA"){ //tecla "d"
-        this.player.goLeft();
-        
-        }
-
+            if(e.code === "KeyD"){ 
+                this.player.goRight();    
+            }
+            if(e.code === "KeyA"){ 
+                this.player.goLeft();
+            }
+            if(e.code === "Space") { 
+                this.player.jump();
+            }
         })
     }
 
-   
     _clean() {
         this.ctx.clearRect(0, 0, 600, 300);
     }
