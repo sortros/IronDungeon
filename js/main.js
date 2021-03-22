@@ -11,13 +11,19 @@ document.addEventListener('DOMContentLoaded', () => {
          const ironGame = new Game(
              ctx = ctx,
              player= new Player(ctx),
-            _gameOver
+            _gameOver,
+            _gameWin
          );
         ironGame.start();
     })
     function _gameOver(){
         document.querySelector('#gameScreen').style="display:none";
         document.querySelector('#GameOver').style= "display: block";
+    }
+
+    function _gameWin(){
+        document.querySelector('#gameScreen').style="display:none";
+        document.querySelector('#GameWin').style= "display: block";
     }
       
 });
