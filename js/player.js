@@ -14,10 +14,10 @@ class Player {
    }
 
     goRight(){
-       this.x += 10;
+       this.x += 2;
     }
     goLeft(){
-        this.x -= 10;
+        this.x -= 2;
     }
 
     jump(){

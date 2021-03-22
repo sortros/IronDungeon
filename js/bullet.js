@@ -1,8 +1,8 @@
 class Bullet{
 
     constructor(ctx){
-        this.x = 590;
-        this.y = 260;
+        this.x = 595;
+        this.y = 262;
         this.height = 10;
         this.width = 10;
         this.context = ctx;
@@ -23,4 +23,13 @@ class Bullet{
            bulletArr.shift();
        }
    }
+   _colision(bullet, player){
+        return !(
+               ((bullet.y + bullet.height) < (player.y)) ||
+               (bullet.y > (player.y + player.height)) ||
+               ((bullet.x + bullet.width) < player.x) ||
+               (bullet.x > (player.x + player.width))
+                );
+    
+   } 
 }

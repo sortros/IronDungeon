@@ -36,9 +36,18 @@ class Game {
         this.bulletArr.forEach(bullet => bullet._draw());
         this.bulletArr.forEach(bullet => bullet._goLeft());
         this.bulletArr.forEach(bullet => bullet._disappear(this.bulletArr));
+        this.bulletArr.forEach(bullet => {
+
+            if(bullet._colision(bullet, this.player)){
+                console.log("tocan");
+
+            };
+            
+        });
         window.requestAnimationFrame(this._update.bind(this));
         
     }
+
     start() { 
         this.player._draw();
         this._movement();
