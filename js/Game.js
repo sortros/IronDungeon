@@ -1,10 +1,9 @@
 class Game {
-    constructor(ctx, player) {
+    constructor(ctx, player, callback) {
         this.ctx = ctx;
         this.player = player;
         this.bulletArr = [];
-
-        //this.cb = callback;
+        this.callback = callback;
     }
 
     _generateBullet(){
@@ -39,7 +38,7 @@ class Game {
         this.bulletArr.forEach(bullet => {
 
             if(bullet._colision(bullet, this.player)){
-                console.log("tocan");
+                this.callback();
 
             };
             
