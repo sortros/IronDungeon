@@ -1,8 +1,20 @@
 class Game {
-    constructor(ctx, player) {
+    constructor(ctx, player, bullet) {
         this.ctx = ctx;
         this.player = player;
+        this.bullet = bullet;
+
         //this.cb = callback;
+    }
+
+    _generateBullet(){
+        this.bullet;
+
+    }
+
+    _goLeft(){
+        this.bullet.x -=1;
+        console.log(this.bullet.x);
     }
 
     _movement() {
@@ -26,12 +38,15 @@ class Game {
     _update() {
         this._clean();
         this.player._draw();
+        setInterval(this._goLeft.bind(this), 3000);
+        this.bullet._draw();
         window.requestAnimationFrame(this._update.bind(this));
+        
     }
     start() { 
         this.player._draw();
         this._movement();
-        //this.player.move();
+        this._generateBullet();
         window.requestAnimationFrame(this._update.bind(this));
     }
 }

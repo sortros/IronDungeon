@@ -1,7 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
     let game;
-    
-    
 
     const startButton = document.querySelector('#start');
     startButton.addEventListener('click', () => {
@@ -12,8 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
          let ctx = canvas.getContext('2d');
          const ironGame = new Game(
              ctx = ctx,
-             player= new Player(ctx)
-         )
+             player= new Player(ctx),
+             bullet = new Bullet(ctx),
+         );
         ironGame.start();
     })
     
