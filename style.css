@@ -44,6 +44,29 @@ p{
     display: none;
 }
 
+#GameOver{
+    background-image: url(images/GameOver.jpg);
+    background-repeat: none;
+    background-size: cover;
+    position: relative;
+    height: 300px;
+    width: 600px;
+    margin-left: 30%;
+    margin-top: 10%;
+
+}
+
+#GameWin{
+    background-image: url(images/youWin.jpg);
+    background-repeat: none;
+    
+    position: relative;
+    height: 300px;
+    width: 400px;
+    margin-left: 35%;
+    margin-top: 10%;
+
+}
 
 
 

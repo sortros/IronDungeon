@@ -55,7 +55,7 @@ class Game {
     start() { 
         this.player._draw();
         this._movement();
-        const bulletSpawn = setInterval(this._generateBullet.bind(this), 1000);        window.requestAnimationFrame(this._update.bind(this));
+        const bulletSpawn = setInterval(this._generateBullet.bind(this), 3000);        window.requestAnimationFrame(this._update.bind(this));
     }
 }
 
