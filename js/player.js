@@ -1,7 +1,7 @@
 class Player {
     constructor(ctx){
         this.x = 5;
-        this.y = 262;
+        this.y = 254;
         this.height = 10;
         this.width = 10;
         this.context = ctx;
@@ -22,12 +22,12 @@ class Player {
 
     jump(){
         let jumpUp = () => {
-            if (this.y > 232) {
+            if (this.y > 202) {
                 this.y -= 2;
             } else {
                 clearInterval(iUp);
                 let jumpDown = () => {
-                    if (this.y < 262) {
+                    if (this.y < 254) {
                         this.y += 2; 
                     } else {
                         clearInterval(iDown);

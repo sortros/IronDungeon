@@ -1,8 +1,8 @@
  //--------------------------Dibujo de niveles---------------------
  function drawLevel1() {
     var ctx = document.querySelector('#myCanvas').getContext("2d");
-    ctx.moveTo(0, 275);  // la posicion del personaje no puede bajar de (0, 263)
-    ctx.lineTo(600, 275);
+    ctx.moveTo(0, 273);  // la posicion del personaje no puede bajar de (0, 263)
+    ctx.lineTo(600, 273);
      ctx.stroke();
 }
 

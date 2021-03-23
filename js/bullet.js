@@ -1,10 +1,10 @@
 class Bullet{
 
     constructor(ctx){
-        this.x = 595;
-        this.y = 262;
-        this.height = 10;
-        this.width = 10;
+        this.x = 590;
+        this.y = 254;
+        this.height = 5;
+        this.width = 5;
         this.context = ctx;
     }
 
