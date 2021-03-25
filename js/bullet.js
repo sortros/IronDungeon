@@ -18,7 +18,7 @@ class Bullet{
     this.x -=1;
    }
    _goDown(){
-    this.y +=0.5;
+    this.y +=1;
    }
 
    _disappear(bulletArr){
