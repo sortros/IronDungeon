@@ -1,16 +1,19 @@
 class Player {
     constructor(ctx){
         this.x = 5;
-        this.y = 254;
-        this.height = 10;
-        this.width = 10;
+        this.y = 240;
+        this.height = 25;
+        this.width = 20;
         this.context = ctx;
     }
 
     _draw() { 
-        this.context.fillStyle = 'red';
-        this.context.fillRect(this.x, this.y, this.width, this.height);
-        this.context.stroke();    
+        let knight = new Image();
+        knight.src = 'images/knight.png';
+        this.context.drawImage(knight, this.x, this.y, this.width, this.height);
+        //this.context.fillStyle = 'red';
+        //this.context.fillRect(this.x, this.y, this.width, this.height);
+        //this.context.stroke();    
    }
 
     goRight(){
@@ -22,12 +25,12 @@ class Player {
 
     jump(){
         let jumpUp = () => {
-            if (this.y > 202) {
+            if (this.y > 198) {
                 this.y -= 2;
             } else {
                 clearInterval(iUp);
                 let jumpDown = () => {
-                    if (this.y < 254) {
+                    if (this.y < 240) {
                         this.y += 2; 
                     } else {
                         clearInterval(iDown);

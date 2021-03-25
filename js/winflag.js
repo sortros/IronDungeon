@@ -8,8 +8,11 @@ class Win {
     }
 
     _draw(ctx, win) { 
+        //let door = new Image();
+        //door.src = 'images/DungeonDoor.png';
+        //this.ctx.drawImage(door, this.x, this.y, this.width, this.height);
         ctx.fillStyle = 'green';
-        ctx.fillRect(win.x, win.y, win.width, win.height);
+        ctx.fillRect(this.x, this.y, this.width, this.height);
         ctx.stroke();  
    }
    _colision(win, player){

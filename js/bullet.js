@@ -3,15 +3,18 @@ class Bullet{
     constructor(ctx){
         this.x = 590;
         this.y = 254;
-        this.height = 5;
-        this.width = 5;
+        this.height = 10;
+        this.width = 10;
         this.context = ctx;
     }
 
     _draw() { 
-        this.context.fillStyle= 'blue';
-        this.context.fillRect(this.x, this.y, this.width, this.height);
-        this.context.stroke(); 
+        let fireball = new Image();
+        fireball.src = 'images/fireball2.png';
+        this.context.drawImage(fireball, this.x, this.y, this.width, this.height);
+        //this.context.fillStyle= 'blue';
+        //this.context.fillRect(this.x, this.y, this.width, this.height);
+        //this.context.stroke(); 
    }
 
    _goLeft(){

@@ -5,7 +5,7 @@ class Game {
         this.bulletArr = [];
         this.gameOver = gameOver;
         this.gameWin = gameWin;
-        this.win = new Win(570, 234, 10, 30);
+        this.win = new Win(530, 240, 20, 25);
     }
 
     _generateBullet(){
@@ -41,7 +41,7 @@ class Game {
         this.bulletArr.forEach(bullet => {
 
             if(bullet._colision(bullet, this.player)){
-               // this.gameOver();
+                this.gameOver();
             };
         });
         if(this.win._colision(this.win, this.player)){
@@ -55,7 +55,7 @@ class Game {
     start() { 
         this.player._draw();
         this._movement();
-        drawLevel1();
+        //drawLevel1();
         const bulletSpawn = setInterval(this._generateBullet.bind(this), 3000);        window.requestAnimationFrame(this._update.bind(this));
     }
 }
