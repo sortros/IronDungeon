@@ -10,10 +10,7 @@ class Player {
     _draw() { 
         let knight = new Image();
         knight.src = 'images/knight.png';
-        this.context.drawImage(knight, this.x, this.y, this.width, this.height);
-        //this.context.fillStyle = 'red';
-        //this.context.fillRect(this.x, this.y, this.width, this.height);
-        //this.context.stroke();    
+        this.context.drawImage(knight, this.x, this.y, this.width, this.height); 
    }
 
     goRight(){
