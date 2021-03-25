@@ -40,6 +40,7 @@ class Game {
         //this.win._trollAway();
         this.bulletArr.forEach(bullet => bullet._draw());
         this.bulletArr.forEach(bullet => bullet._goLeft());
+        this.bulletArr.forEach(bullet => bullet._goDown());
         this.bulletArr.forEach(bullet => bullet._disappear(this.bulletArr));
         this.bulletArr.forEach(bullet => {
 
@@ -60,7 +61,7 @@ class Game {
         this._movement();
         //this.win._trollAway();
         //drawLevel1();
-        const bulletSpawn = setInterval(this._generateBullet.bind(this), 3000);        window.requestAnimationFrame(this._update.bind(this));
+        const bulletSpawn = setInterval(this._generateBullet.bind(this), 500);        window.requestAnimationFrame(this._update.bind(this));
     }
 }
 

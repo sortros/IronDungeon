@@ -2,7 +2,7 @@ class Bullet{
 
     constructor(ctx){
         this.x = 590;
-        this.y = 250;
+        this.y = Math.floor(Math.random() * 200);
         this.height = 10;
         this.width = 10;
         this.context = ctx;
@@ -17,9 +17,12 @@ class Bullet{
    _goLeft(){
     this.x -=1;
    }
+   _goDown(){
+    this.y +=0.5;
+   }
 
    _disappear(bulletArr){
-       if (this.x === 0){
+       if ((this.x === 0) || (this.y === 300)) {
            bulletArr.shift();
        }
    }
