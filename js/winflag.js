@@ -20,4 +20,15 @@ class Win {
            (win.x > (player.x + player.width))
             );
     } 
+
+    _trollAway(player){
+        let doorAway = (player) => {
+         if((player.x) >= ( this.x -30)  && (this.x <= 530)){ 
+                         this.x +=2;    
+         }    else {
+            clearInterval(trollDoor);
+         }
+        }
+        const trollDoor = setInterval(doorAway, 25);
+    }
 }

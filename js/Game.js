@@ -5,7 +5,7 @@ class Game {
         this.bulletArr = [];
         this.gameOver = gameOver;
         this.gameWin = gameWin;
-        this.win = new Win(530, 240, 20, 25);
+        this.win = new Win(475, 239, 20, 25);
     }
 
     _generateBullet(){
@@ -21,6 +21,8 @@ class Game {
             if(e.code === "KeyA"){ 
                 this.player.goLeft();
             }
+        })
+        document.addEventListener('keypress', (e) => {
             if(e.code === "Space") { 
                 this.player.jump();
             }
@@ -35,6 +37,7 @@ class Game {
         this._clean();
         this.player._draw();
         this.win._draw(this.ctx, this.win);
+        //this.win._trollAway();
         this.bulletArr.forEach(bullet => bullet._draw());
         this.bulletArr.forEach(bullet => bullet._goLeft());
         this.bulletArr.forEach(bullet => bullet._disappear(this.bulletArr));
@@ -55,6 +58,7 @@ class Game {
     start() { 
         this.player._draw();
         this._movement();
+        //this.win._trollAway();
         //drawLevel1();
         const bulletSpawn = setInterval(this._generateBullet.bind(this), 3000);        window.requestAnimationFrame(this._update.bind(this));
     }

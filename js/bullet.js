@@ -30,6 +30,5 @@ class Bullet{
                ((bullet.x + bullet.width) < player.x) ||
                (bullet.x > (player.x + player.width))
                 );
-    
    } 
 }
