@@ -1,18 +1,29 @@
 class Bullet{
 
-    constructor(ctx){
-        this.x = 590;
-        this.y = Math.floor(Math.random() * 200);
-        this.height = 10;
-        this.width = 10;
-        this.context = ctx;
-    }
+   //constructor(ctx){
+   //    this.x = 590;
+   //    this.y = Math.floor(Math.random() * 200);
+   //    this.height = 10;
+   //    this.width = 10;
+   //    this.context = ctx;
+   //}
+   constructor(x, y, width, height){
+    this.x = x;
+    this.y = y;
+    this.width = width;
+    this.height = height;
+}
 
-    _draw() { 
+    _drawBulletLeft(context) { 
         let fireball = new Image();
         fireball.src = 'images/fireball2.png';
-        this.context.drawImage(fireball, this.x, this.y, this.width, this.height);
+        context.drawImage(fireball, this.x, this.y, this.width, this.height);
    }
+   _drawBulletDown(context) { 
+    let fireball = new Image();
+    fireball.src = 'images/fireballDown.png';
+    context.drawImage(fireball, this.x, this.y, this.width, this.height);
+}
 
    _goLeft(){
     this.x -=1;
