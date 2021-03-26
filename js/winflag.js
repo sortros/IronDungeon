@@ -22,9 +22,9 @@ class Win {
     } 
 
     _trollAway(player){
-        let doorAway = (player) => {
+        let doorAway = () => {
          if((player.x) >= ( this.x -30)  && (this.x <= 530)){ 
-                         this.x +=2;    
+            this.x +=2;    
          }    else {
             clearInterval(trollDoor);
          }
