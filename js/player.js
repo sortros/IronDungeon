@@ -28,7 +28,7 @@ class Player {
                 clearInterval(iUp);
                 let jumpDown = () => {
                     if (this.y < 240) {
-                        this.y += 4; 
+                        this.y += 2; 
                     } else {
                         clearInterval(iDown);
                     }
