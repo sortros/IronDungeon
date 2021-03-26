@@ -2,13 +2,14 @@ body{
     background-color: black;
     background-repeat: none;
     background-size: cover;
+    font-family: 'Press Start 2P', cursive;
 }
 p{
     color: rgb(247, 244, 241);
     position: relative;
     top: 100px;
-    left: 600px;
-    font-size: 22px;
+    left: 400px;
+    font-size: 18px;
 }
 
 #start{

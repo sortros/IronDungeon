@@ -22,7 +22,7 @@ class Player {
 
     jump(){
         let jumpUp = () => {
-            if (this.y > 198) {
+            if (this.y > 190) {
                 this.y -= 2;
             } else {
                 clearInterval(iUp);

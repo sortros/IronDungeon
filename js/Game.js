@@ -10,11 +10,11 @@ class Game {
     }
 
     _generateBulletArrayLeft(){
-        let bullet = new Bullet(590, 250, 10, 10);
+        let bullet = new Bullet(590, 250, 15, 15);
         this.bulletArrLeft.push(bullet);
     }
     _generateBulletArrayDown(){
-        let bullet = new Bullet(Math.floor(Math.random() * 600), 0, 10, 10);
+        let bullet = new Bullet(Math.floor(Math.random() * 600), 0, 20, 20);
         this.bulletArrDown.push(bullet);
     }
 
@@ -73,7 +73,7 @@ class Game {
         this.player._draw();
         this._movement();
         const bulletSpawnLeft = setInterval(this._generateBulletArrayLeft.bind(this), 3000);
-        const bulletSpawnDown = setInterval(this._generateBulletArrayDown.bind(this), 1000);       
+        const bulletSpawnDown = setInterval(this._generateBulletArrayDown.bind(this), 1500);       
         window.requestAnimationFrame(this._update.bind(this));
         
     }
