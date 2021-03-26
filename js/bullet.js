@@ -14,11 +14,16 @@ class Bullet{
     this.height = height;
 }
 
-    _draw(context) { 
+    _drawBulletLeft(context) { 
         let fireball = new Image();
         fireball.src = 'images/fireball2.png';
         context.drawImage(fireball, this.x, this.y, this.width, this.height);
    }
+   _drawBulletDown(context) { 
+    let fireball = new Image();
+    fireball.src = 'images/fireballDown.png';
+    context.drawImage(fireball, this.x, this.y, this.width, this.height);
+}
 
    _goLeft(){
     this.x -=1;

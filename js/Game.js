@@ -43,7 +43,7 @@ class Game {
         this.player._draw();
         this.win._draw(this.ctx, this.win);
         this.win._trollAway(this.player);
-        this.bulletArrLeft.forEach(bullet => bullet._draw(this.ctx));
+        this.bulletArrLeft.forEach(bullet => bullet._drawBulletLeft(this.ctx));
         this.bulletArrLeft.forEach(bullet => bullet._goLeft());
         this.bulletArrLeft.forEach(bullet => bullet._disappear(this.bulletArrLeft));
         this.bulletArrLeft.forEach(bullet => {
@@ -52,7 +52,7 @@ class Game {
                 this.gameOver();
             };
         });
-        this.bulletArrDown.forEach(bullet => bullet._draw(this.ctx));
+        this.bulletArrDown.forEach(bullet => bullet._drawBulletDown(this.ctx));
         this.bulletArrDown.forEach(bullet => bullet._goDown());
         this.bulletArrDown.forEach(bullet => bullet._disappear(this.bulletArrDown));
         this.bulletArrDown.forEach(bullet => {
