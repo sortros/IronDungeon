@@ -23,12 +23,12 @@ class Player {
     jump(){
         let jumpUp = () => {
             if (this.y > 198) {
-                this.y -= 2;
+                this.y -= 4;
             } else {
                 clearInterval(iUp);
                 let jumpDown = () => {
                     if (this.y < 240) {
-                        this.y += 2; 
+                        this.y += 4; 
                     } else {
                         clearInterval(iDown);
                     }
