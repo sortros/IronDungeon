@@ -2,15 +2,20 @@ class Game {
     constructor(ctx, player, gameOver, gameWin) {
         this.ctx = ctx;
         this.player = player;
-        this.bulletArr = [];
+        this.bulletArrLeft = [];
+        this.bulletArrDown = [];
         this.gameOver = gameOver;
         this.gameWin = gameWin;
         this.win = new Win(290, 230, 30, 35);
     }
 
-    _generateBullet(){
-        let bullet = new Bullet(this.ctx);
-        this.bulletArr.push(bullet);
+    _generateBulletArrayLeft(){
+        let bullet = new Bullet(590, 250, 10, 10);
+        this.bulletArrLeft.push(bullet);
+    }
+    _generateBulletArrayDown(){
+        let bullet = new Bullet(Math.floor(Math.random() * 600), 0, 10, 10);
+        this.bulletArrDown.push(bullet);
     }
 
     _movement() {
@@ -38,11 +43,19 @@ class Game {
         this.player._draw();
         this.win._draw(this.ctx, this.win);
         this.win._trollAway(this.player);
-        this.bulletArr.forEach(bullet => bullet._draw());
-        this.bulletArr.forEach(bullet => bullet._goLeft());
-        this.bulletArr.forEach(bullet => bullet._goDown());
-        this.bulletArr.forEach(bullet => bullet._disappear(this.bulletArr));
-        this.bulletArr.forEach(bullet => {
+        this.bulletArrLeft.forEach(bullet => bullet._draw(this.ctx));
+        this.bulletArrLeft.forEach(bullet => bullet._goLeft());
+        this.bulletArrLeft.forEach(bullet => bullet._disappear(this.bulletArrLeft));
+        this.bulletArrLeft.forEach(bullet => {
+
+            if(bullet._colision(bullet, this.player)){
+                this.gameOver();
+            };
+        });
+        this.bulletArrDown.forEach(bullet => bullet._draw(this.ctx));
+        this.bulletArrDown.forEach(bullet => bullet._goDown());
+        this.bulletArrDown.forEach(bullet => bullet._disappear(this.bulletArrDown));
+        this.bulletArrDown.forEach(bullet => {
 
             if(bullet._colision(bullet, this.player)){
                 this.gameOver();
@@ -59,8 +72,10 @@ class Game {
     start() { 
         this.player._draw();
         this._movement();
-        //drawLevel1();
-        const bulletSpawn = setInterval(this._generateBullet.bind(this), 500);        window.requestAnimationFrame(this._update.bind(this));
+        const bulletSpawnLeft = setInterval(this._generateBulletArrayLeft.bind(this), 3000);
+        const bulletSpawnDown = setInterval(this._generateBulletArrayDown.bind(this), 1000);       
+        window.requestAnimationFrame(this._update.bind(this));
+        
     }
 }
 
